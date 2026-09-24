@@ -1,5 +1,5 @@
 // Husk fra dag 1: skriv "use strict" herunder
-
+"use strict";
 
 // Nyt i dag: document.getElementById henter det HTML-element, der har den angivne id-attribut.
 // Husk fra HTML/CSS: en id-attribut er unik og identificerer ét bestemt element - det er præcis den værdi, vi bruger her.
@@ -16,7 +16,15 @@ changeImgBtn.addEventListener("click", function() {
     // "this" er den knap, der blev klikket på.
     // this.textContent er teksten, der står på knappen lige nu.
     // getImage.src er billedets kilde (hvilket billede der vises).
-    //
+
+    if (this.textContent === `Before`) {
+        getImage.src = `img/before.png`;
+        this.textContent = `After`;
+    } else {
+        getImage.src = `img/after.png`;
+        this.textContent = `Before`;
+    }
+    
     // Hvis this.textContent er "Before", så:
     //   - sæt getImage.src til "img/before.png"
     //   - sæt this.textContent til "After"
